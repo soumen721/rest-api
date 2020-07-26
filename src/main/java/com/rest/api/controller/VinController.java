@@ -1,6 +1,6 @@
 package com.rest.api.controller;
 
-import com.rest.api.error.RimNotFoundException;
+import com.rest.api.error.VinNotFoundException;
 import com.rest.api.model.Response;
 import com.rest.api.service.VinServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.Optional;
 
 @RestController
-public class RimController {
+public class VinController {
 
     @Autowired
     private VinServiceImpl vinService;
@@ -25,7 +25,7 @@ public class RimController {
         if (specDigitResponse.isPresent()) {
             return ResponseEntity.ok(specDigitResponse.get());
         } else {
-            throw new RimNotFoundException(vinId);
+            throw new VinNotFoundException(vinId);
         }
     }
 
